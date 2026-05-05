@@ -1,0 +1,349 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <div class="topbar-title">richard_blondel.md — portfolio</div>
+  </div>
+
+  <!-- SHELL -->
+  <div class="shell">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <div class="sidebar-section-label">~/portfolio</div>
+      <ul class="sidebar-tree">
+        <li class="tree-item active" data-target="hero" onclick="navScrollTo('hero')">
+          <span class="tree-icon">▶</span>
+          <span>index.md</span>
+        </li>
+        <li class="tree-item" data-target="about" onclick="navScrollTo('about')">
+          <span class="tree-icon">◆</span>
+          <span>about.md</span>
+        </li>
+        <li class="tree-item" data-target="experience" onclick="navScrollTo('experience')">
+          <span class="tree-icon">◆</span>
+          <span>experience.md</span>
+        </li>
+        <li class="tree-item" data-target="skills" onclick="navScrollTo('skills')">
+          <span class="tree-icon">◆</span>
+          <span>skills.md</span>
+        </li>
+        <li class="tree-item" data-target="contact" onclick="navScrollTo('contact')">
+          <span class="tree-icon">◆</span>
+          <span>contact.md</span>
+        </li>
+      </ul>
+
+      <hr class="sidebar-divider" />
+
+      <div class="sidebar-section-label">git</div>
+      <ul class="sidebar-tree">
+        <li class="tree-item" style="cursor: default;">
+          <span class="tree-icon" style="color: var(--green)">⎇</span>
+          <span>main</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="version">
+          <div class="status-dot"></div>
+          <span>solving problems @ PandaDoc</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="content" id="main-content">
+
+      <!-- HERO -->
+      <section id="hero">
+        <div class="hero-pre">$ whoami</div>
+        <h1 class="hero-name">Richard Blondel</h1>
+        <div class="hero-role">
+          Senior Backend Engineer &nbsp;/&nbsp; <span class="highlight">Madrid, Spain</span>
+        </div>
+        <p class="hero-tagline">
+          Crafting backend services with the end user in mind. Passionate about scalable systems,
+          clean architecture, and the occasional mountain trail.<span class="cursor"></span>
+        </p>
+        <div class="hero-badges">
+          <div class="badge">TypeScript</div>
+          <div class="badge">Golang</div>
+          <div class="badge">AWS</div>
+          <div class="badge">Terraform</div>
+          <div class="badge">PostgreSQL</div>
+          <div class="badge">DynamoDB</div>
+          <div class="badge">REST APIs</div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-header">
+          <span class="section-title">about.md</span>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-block">
+          <div class="md-block">
+            <h2 class="md-h2">Richard Blondel</h2>
+            <p class="md-p">
+              Senior backend engineer from Normandy, France, now based in Madrid, Spain. I focus on building distributed
+              systems and cloud infrastructure that are reliable, observable, and easy to
+              reason about.
+            </p>
+            <p class="md-p">
+              I care about clean architecture and the product: software should solve real
+              problems for real people. As LLMs take over more of the coding, the engineers
+              who understand the problem deeply will stand out.
+            </p>
+            <hr class="md-hr" />
+            <h3 class="md-h3">Outside of work</h3>
+            <p class="md-p">
+              I spend time hiking, cooking, and slowly picking up new languages —
+              human ones, for a change.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <div class="section-header">
+          <span class="section-title">experience.md</span>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot current"></div>
+            <div class="job-header">
+              <span class="job-title">Senior Software Engineer</span>
+              <span class="job-at">@</span>
+              <span class="job-company">PandaDoc</span>
+            </div>
+            <div class="job-meta">
+              <span>Apr 2026 — Present</span>
+              <span>·</span>
+              <span>Madrid, Spain</span>
+            </div>
+            <div class="job-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Golang</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="job-header">
+              <span class="job-title">Senior Backend Engineer</span>
+              <span class="job-at">@</span>
+              <span class="job-company">Babbel</span>
+            </div>
+            <div class="job-meta">
+              <span>May 2025 — Mar 2026</span>
+              <span>·</span>
+              <span>Berlin, Germany</span>
+            </div>
+            <p class="job-desc">
+              On Babbel's AI Conversation Partner feature, built a memory layer to enable
+              ultra-personalized learning experiences by retaining and leveraging user data.
+              Part of a 24/7 on-call roster and member of the Incident Management Board,
+              fostering best monitoring and observability practices across the organisation.
+            </p>
+            <div class="job-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Golang</span>
+              <span class="tag">Observability</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="job-header">
+              <span class="job-title">Professional Backend Engineer</span>
+              <span class="job-at">@</span>
+              <span class="job-company">Babbel</span>
+            </div>
+            <div class="job-meta">
+              <span>Nov 2022 — May 2025</span>
+              <span>·</span>
+              <span>Berlin, Germany</span>
+            </div>
+            <p class="job-desc">
+              Designed and delivered scalable backend services with an emphasis on event-driven
+              architecture using SQS, EventBridge, and Kinesis. Led the architecture and
+              development of Babbel's in-house push notification platform, delivering 100k+
+              notifications within a 5-minute window. Implemented high-impact features like
+              streaks and streak challenges, increasing 1-week retention by 6%. Mentored a
+              junior engineer.
+            </p>
+            <div class="job-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">AWS Lambda</span>
+              <span class="tag">SQS</span>
+              <span class="tag">EventBridge</span>
+              <span class="tag">Kinesis</span>
+              <span class="tag">DynamoDB</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="job-header">
+              <span class="job-title">Backend Developer</span>
+              <span class="job-at">@</span>
+              <span class="job-company">Axonaut</span>
+            </div>
+            <div class="job-meta">
+              <span>Oct 2021 — Jul 2022</span>
+              <span>·</span>
+              <span>Toulouse, France · Apprenticeship</span>
+            </div>
+            <p class="job-desc">
+              Developed integrations for third-party tools like RingOver. Tracked and fixed
+              bugs via server monitoring, answered customers' technical questions, and improved
+              the code base with security patches, performance improvements, and coding standards.
+            </p>
+            <div class="job-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">Symfony 5</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">GitLab CI/CD</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="section-header">
+          <span class="section-title">skills.md</span>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-table">
+          <div class="skill-row">
+            <span class="skill-category">Languages</span>
+            <div class="skill-tokens">
+              <span class="skill-token">TypeScript</span><span class="skill-sep">·</span>
+              <span class="skill-token">Golang</span><span class="skill-sep">·</span>
+              <span class="skill-token">Python</span><span class="skill-sep">·</span>
+              <span class="skill-token">Node.js</span><span class="skill-sep">·</span>
+              <span class="skill-token">PHP</span><span class="skill-sep">·</span>
+              <span class="skill-token">Java</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Cloud &amp; Infra</span>
+            <div class="skill-tokens">
+              <span class="skill-token">AWS Lambda</span><span class="skill-sep">·</span>
+              <span class="skill-token">SQS</span><span class="skill-sep">·</span>
+              <span class="skill-token">EventBridge</span><span class="skill-sep">·</span>
+              <span class="skill-token">Kinesis</span><span class="skill-sep">·</span>
+              <span class="skill-token">Terraform</span><span class="skill-sep">·</span>
+              <span class="skill-token">Unix</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Databases</span>
+            <div class="skill-tokens">
+              <span class="skill-token">DynamoDB</span><span class="skill-sep">·</span>
+              <span class="skill-token">PostgreSQL</span><span class="skill-sep">·</span>
+              <span class="skill-token">MySQL</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">Architecture</span>
+            <div class="skill-tokens">
+              <span class="skill-token">REST APIs</span><span class="skill-sep">·</span>
+              <span class="skill-token">Event-driven</span><span class="skill-sep">·</span>
+              <span class="skill-token">Microservices</span><span class="skill-sep">·</span>
+              <span class="skill-token">Observability</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category">CI/CD &amp; Tooling</span>
+            <div class="skill-tokens">
+              <span class="skill-token">GitHub Actions</span><span class="skill-sep">·</span>
+              <span class="skill-token">GitLab CI/CD</span><span class="skill-sep">·</span>
+              <span class="skill-token">Ansible</span><span class="skill-sep">·</span>
+              <span class="skill-token">Jenkins</span><span class="skill-sep">·</span>
+              <span class="skill-token">Git</span><span class="skill-sep">·</span>
+              <span class="skill-token">LLMs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-header">
+          <span class="section-title">contact.md</span>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-block">
+          <p class="contact-intro">
+            <span style="color: var(--text-muted)"># Open to new opportunities and interesting conversations.</span><br />
+            Feel free to reach out — I respond within 48 hours.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:me@richardblondel.fr" class="contact-link">
+              <span class="contact-icon">✉</span>
+              <span class="contact-label">me@richardblondel.fr</span>
+              <span class="contact-arrow">→</span>
+            </a>
+            <a href="https://www.linkedin.com/in/richard-blondel-b83b3b149" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-icon">in</span>
+              <span class="contact-label">linkedin.com/in/richard-blondel-b83b3b149</span>
+              <span class="contact-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</Layout>
+
+<script is:inline>
+  function navScrollTo(id) {
+    const el = document.getElementById(id);
+    const content = document.getElementById('main-content');
+    if (!el || !content) return;
+    content.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
+  }
+
+  const content = document.getElementById('main-content');
+  const sections = ['hero', 'about', 'experience', 'skills', 'contact'];
+
+  function updateActive() {
+    const scrollTop = content.scrollTop;
+    let current = sections[0];
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollTop + 120) current = id;
+    }
+    document.querySelectorAll('.tree-item[data-target]').forEach(item => {
+      item.classList.toggle('active', item.dataset.target === current);
+    });
+  }
+
+  content.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+</script>

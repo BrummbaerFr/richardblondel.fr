@@ -1,0 +1,53 @@
+---
+import '@fontsource/fira-code/latin-300.css';
+import '@fontsource/fira-code/latin-400.css';
+import '@fontsource/fira-code/latin-500.css';
+import '@fontsource/fira-code/latin-600.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Richard Blondel — Senior Backend Engineer',
+  description = 'Richard Blondel — Senior Backend Engineer from Normandy, France. Specialising in distributed systems, cloud infrastructure, and clean architecture.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Richard Blondel',
+  jobTitle: 'Senior Backend Engineer',
+  url: 'https://richardblondel.fr/',
+  email: 'richard.eric.blondel@gmail.com',
+  sameAs: ['https://www.linkedin.com/in/richard-blondel-b83b3b149'],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
