@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { books } from '../data/books';
+
+const genres = [...new Set(books.map(b => b.genre))].sort();
+---
+
+<Layout
+  title="Books — Richard Blondel"
+  description="Books I've read, with short reviews."
+>
+  <div class="topbar">
+    <div class="topbar-dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <div class="topbar-title">books.md — library</div>
+  </div>
+
+  <div class="shell">
+
+    <nav class="sidebar">
+      <div class="sidebar-section-label">~/portfolio</div>
+      <ul class="sidebar-tree">
+        <li class="tree-item" onclick="window.location.href='/'">
+          <span class="tree-icon">◆</span>
+          <span>index.md</span>
+        </li>
+        <li class="tree-item" onclick="window.location.href='/'">
+          <span class="tree-icon">◆</span>
+          <span>about.md</span>
+        </li>
+        <li class="tree-item" onclick="window.location.href='/'">
+          <span class="tree-icon">◆</span>
+          <span>experience.md</span>
+        </li>
+        <li class="tree-item" onclick="window.location.href='/'">
+          <span class="tree-icon">◆</span>
+          <span>skills.md</span>
+        </li>
+        <li class="tree-item" onclick="window.location.href='/'">
+          <span class="tree-icon">◆</span>
+          <span>contact.md</span>
+        </li>
+      </ul>
+
+      <hr class="sidebar-divider" />
+
+      <div class="sidebar-section-label">~/library</div>
+      <ul class="sidebar-tree">
+        <li class="tree-item active" data-filter="all">
+          <span class="tree-icon">▶</span>
+          <span>all.md</span>
+        </li>
+        {genres.map(genre => (
+          <li class="tree-item" data-filter={genre}>
+            <span class="tree-icon">◆</span>
+            <span>{genre}.md</span>
+          </li>
+        ))}
+      </ul>
+
+      <hr class="sidebar-divider" />
+
+      <div class="sidebar-section-label">git</div>
+      <ul class="sidebar-tree">
+        <li class="tree-item" style="cursor: default;">
+          <span class="tree-icon" style="color: var(--green)">⎇</span>
+          <span>main</span>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content" id="main-content">
+      <section id="books-section">
+        <div class="section-header">
+          <span class="section-title">books.md</span>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="book-grid" id="book-grid">
+          {books.map(book => (
+            <div class="book-card" data-genre={book.genre}>
+              <div class="book-cover-wrap">
+                {book.isbn && (
+                  <img
+                    class="book-cover"
+                    src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`}
+                    alt={`${book.title} cover`}
+                    loading="lazy"
+                    onerror="this.parentElement.classList.add('no-cover')"
+                    onload="if(this.naturalWidth<10)this.parentElement.classList.add('no-cover')"
+                  />
+                )}
+                <div class="book-cover-fallback">
+                  <span>{book.title}</span>
+                </div>
+              </div>
+
+              <div class="book-body">
+                {book.currentlyReading && (
+                  <div class="reading-chip">
+                    <span class="reading-dot"></span>reading
+                  </div>
+                )}
+                <div class="book-title">{book.title}</div>
+                <div class="book-author">{book.author}</div>
+                <div class="book-meta">
+                  <span class="genre-tag">{book.genre}</span>
+                  <span class="star-rating">
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <span class={i < book.rating ? 'star filled' : 'star empty'}>★</span>
+                    ))}
+                  </span>
+                </div>
+                <p class="book-review">{book.review}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<script is:inline>
+  document.querySelectorAll('.sidebar .tree-item[data-filter]').forEach(item => {
+    item.addEventListener('click', function () {
+      const genre = this.dataset.filter;
+
+      document.querySelectorAll('.sidebar .tree-item[data-filter]').forEach(el => {
+        el.classList.remove('active');
+        el.querySelector('.tree-icon').textContent = '◆';
+      });
+      this.classList.add('active');
+      this.querySelector('.tree-icon').textContent = '▶';
+
+      document.querySelectorAll('.book-card').forEach(card => {
+        card.classList.toggle('hidden', genre !== 'all' && card.dataset.genre !== genre);
+      });
+    });
+  });
+</script>
