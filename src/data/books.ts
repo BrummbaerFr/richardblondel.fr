@@ -81,8 +81,19 @@ export const books: Book[] = [
     rating: 5,
     genre: 'memoir',
     isbn: '9782843042591',
+    cover: 'https://m.media-amazon.com/images/I/718L6wu+JBL._SL500_.jpg',
     review:
       "Ming Chen's memoir spans decades of persecution in Maoist China with extraordinary restraint and clarity. Born in 1908, he survived re-education camps, forced labor, and systematic humiliation without losing his voice. One of the most quietly devastating testimonies of the 20th century.",
+  },
+  {
+    title: 'Beyond the Wall',
+    author: 'Katja Hoyer',
+    rating: 5,
+    genre: 'history',
+    isbn: '9780241553787',
+    cover: 'https://m.media-amazon.com/images/I/8182xIP-8dL._SL500_.jpg',
+    review:
+      'Hoyer tells the story of East Germany not through the lens of the Wall or the Stasi, but through the lives of the people who actually lived there — with ambition, nostalgia, and genuine belonging. It is a corrective to the Western narrative that treats the GDR as pure dystopia and nothing else. Deeply researched and compulsively readable.',
   },
   {
     title: 'Gargantua',
