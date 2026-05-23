@@ -83,10 +83,10 @@ const genres = [...new Set(books.map(b => b.genre))].sort();
           {books.map(book => (
             <div class="book-card" data-genre={book.genre}>
               <div class="book-cover-wrap">
-                {book.isbn && (
+                {(book.cover || book.isbn) && (
                   <img
                     class="book-cover"
-                    src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`}
+                    src={book.cover ?? `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`}
                     alt={`${book.title} cover`}
                     loading="lazy"
                     onerror="this.parentElement.classList.add('no-cover')"
