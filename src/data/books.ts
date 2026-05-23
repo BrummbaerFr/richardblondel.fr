@@ -93,4 +93,13 @@ export const books: Book[] = [
     review:
       'Oakley and Schewe distill the science of learning into a compact, immediately usable toolkit — spaced repetition, active recall, interleaving, deliberate practice. It builds on A Mind for Numbers but is more practical and less padded. Short enough to read in an afternoon, useful enough to revisit often.',
   },
+  {
+    title: 'Crime and Punishment',
+    author: 'Fyodor Dostoevsky',
+    rating: 5,
+    genre: 'classic',
+    isbn: '9780679734505',
+    review:
+      'Dostoevsky builds unbearable psychological pressure from the first page — Raskolnikov\'s crime is almost secondary to the collapse that follows it. The novel is fundamentally about the impossibility of living outside conscience, dressed up as a murder story. One of the few books that genuinely changes how you think about guilt, suffering, and redemption.',
+  },
 ];
