@@ -73,6 +73,34 @@ import Layout from '../layouts/Layout.astro';
     <!-- CONTENT -->
     <main class="content" id="main-content">
 
+      <!-- MOBILE TAB BAR -->
+      <nav class="tab-bar" aria-label="Mobile navigation">
+        <a class="tab active" data-target="hero" href="#" onclick="mobileScrollTo('hero'); return false;">
+          <span class="tab-icon">▶</span>
+          <span>index.md</span>
+        </a>
+        <a class="tab" data-target="about" href="#" onclick="mobileScrollTo('about'); return false;">
+          <span class="tab-icon">◆</span>
+          <span>about.md</span>
+        </a>
+        <a class="tab" data-target="experience" href="#" onclick="mobileScrollTo('experience'); return false;">
+          <span class="tab-icon">◆</span>
+          <span>experience.md</span>
+        </a>
+        <a class="tab" data-target="skills" href="#" onclick="mobileScrollTo('skills'); return false;">
+          <span class="tab-icon">◆</span>
+          <span>skills.md</span>
+        </a>
+        <a class="tab" data-target="contact" href="#" onclick="mobileScrollTo('contact'); return false;">
+          <span class="tab-icon">◆</span>
+          <span>contact.md</span>
+        </a>
+        <a class="tab" href="/books">
+          <span class="tab-icon">◆</span>
+          <span>books.md</span>
+        </a>
+      </nav>
+
       <!-- HERO -->
       <section id="hero">
         <div class="hero-pre">$ whoami</div>
@@ -342,28 +370,61 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script is:inline>
-  function navScrollTo(id) {
-    const el = document.getElementById(id);
-    const content = document.getElementById('main-content');
-    if (!el || !content) return;
-    content.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
-  }
-
   const content = document.getElementById('main-content');
   const sections = ['hero', 'about', 'experience', 'skills', 'contact'];
 
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function getStickyOffset() {
+    const topbarH = document.querySelector('.topbar')?.offsetHeight || 36;
+    const tabBarH = document.querySelector('.tab-bar')?.offsetHeight || 35;
+    return topbarH + tabBarH;
+  }
+
+  function navScrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    content.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
+  }
+
+  function mobileScrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const offset = getStickyOffset();
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
   function updateActive() {
-    const scrollTop = content.scrollTop;
     let current = sections[0];
-    for (const id of sections) {
-      const el = document.getElementById(id);
-      if (el && el.offsetTop <= scrollTop + 120) current = id;
+
+    if (isMobile()) {
+      const offset = getStickyOffset() + 20;
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top + window.scrollY <= window.scrollY + offset) {
+          current = id;
+        }
+      }
+    } else {
+      const scrollTop = content.scrollTop;
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollTop + 120) current = id;
+      }
     }
-    document.querySelectorAll('.tree-item[data-target]').forEach(item => {
+
+    document.querySelectorAll('.tree-item[data-target], .tab[data-target]').forEach(item => {
       item.classList.toggle('active', item.dataset.target === current);
+    });
+    document.querySelectorAll('.tab[data-target]').forEach(tab => {
+      tab.querySelector('.tab-icon').textContent = tab.dataset.target === current ? '▶' : '◆';
     });
   }
 
   content.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('scroll', updateActive, { passive: true });
   updateActive();
 </script>

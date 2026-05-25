@@ -73,6 +73,35 @@ const genres = [...new Set(books.map(b => b.genre))].sort();
     </nav>
 
     <main class="content" id="main-content">
+
+      <!-- MOBILE TAB BAR -->
+      <nav class="tab-bar" aria-label="Mobile navigation">
+        <a class="tab" href="/">
+          <span class="tab-icon">◆</span>
+          <span>index.md</span>
+        </a>
+        <a class="tab" href="/#about">
+          <span class="tab-icon">◆</span>
+          <span>about.md</span>
+        </a>
+        <a class="tab" href="/#experience">
+          <span class="tab-icon">◆</span>
+          <span>experience.md</span>
+        </a>
+        <a class="tab" href="/#skills">
+          <span class="tab-icon">◆</span>
+          <span>skills.md</span>
+        </a>
+        <a class="tab" href="/#contact">
+          <span class="tab-icon">◆</span>
+          <span>contact.md</span>
+        </a>
+        <a class="tab active" href="/books">
+          <span class="tab-icon">▶</span>
+          <span>books.md</span>
+        </a>
+      </nav>
+
       <section id="books-section">
         <div class="section-header">
           <span class="section-title">books.md</span>
@@ -127,6 +156,9 @@ const genres = [...new Set(books.map(b => b.genre))].sort();
 </Layout>
 
 <script is:inline>
+  // Scroll active tab into view on mobile
+  document.querySelector('.tab.active')?.scrollIntoView({ inline: 'nearest', behavior: 'instant' });
+
   document.querySelectorAll('.sidebar .tree-item[data-filter]').forEach(item => {
     item.addEventListener('click', function () {
       const genre = this.dataset.filter;
