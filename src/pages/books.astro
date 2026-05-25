@@ -108,13 +108,15 @@ const genres = [...new Set(books.map(b => b.genre))].sort();
                 <div class="book-author">{book.author}</div>
                 <div class="book-meta">
                   <span class="genre-tag">{book.genre}</span>
-                  <span class="star-rating">
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <span class={i < book.rating ? 'star filled' : 'star empty'}>★</span>
-                    ))}
-                  </span>
+                  {book.rating !== undefined && (
+                    <span class="star-rating">
+                      {Array.from({ length: 5 }, (_, i) => (
+                        <span class={i < book.rating! ? 'star filled' : 'star empty'}>★</span>
+                      ))}
+                    </span>
+                  )}
                 </div>
-                <p class="book-review">{book.review}</p>
+                {book.review && <p class="book-review">{book.review}</p>}
               </div>
             </div>
           ))}
