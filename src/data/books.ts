@@ -86,6 +86,12 @@ export const books: Book[] = [
     isbn: '9781473545557',
   },
   {
+    title: 'What You Are Looking for Is in the Library',
+    author: 'Michiko Aoyama',
+    genre: 'fiction',
+    isbn: '9781529196269',
+  },
+  {
     title: 'Vagabonding',
     author: 'Rolf Potts',
     rating: 4,
