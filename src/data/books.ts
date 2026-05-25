@@ -15,6 +15,7 @@ export const books: Book[] = [
     author: 'Oliver Moody',
     genre: 'history',
     isbn: '9781399814300',
+    cover: 'https://m.media-amazon.com/images/I/615WWSm9g7L._SL500_.jpg',
     currentlyReading: true,
   },
   {
@@ -31,6 +32,7 @@ export const books: Book[] = [
     author: 'Michiko Aoyama',
     genre: 'fiction',
     isbn: '9781529196269',
+    cover: 'https://m.media-amazon.com/images/I/81gyzVTA6vL._SL500_.jpg',
   },
   {
     title: 'Four Thousand Weeks',
