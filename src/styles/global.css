@@ -757,12 +757,6 @@ section:last-child { border-bottom: none; }
   .book-grid {
     grid-template-columns: 1fr;
   }
-}
-
-@media (min-width: 450px) and (max-width: 768px) {
-  .book-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   /* Sticky chrome on mobile */
   .topbar {
@@ -825,5 +819,11 @@ section:last-child { border-bottom: none; }
 
   .tab.active .tab-icon {
     color: var(--amber);
+  }
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
