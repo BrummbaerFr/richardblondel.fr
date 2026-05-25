@@ -25,20 +25,26 @@ export const books: Book[] = [
     genre: 'philosophy',
     isbn: '9780593471975',
     review:
-      'I always wondered how to reconcile "living my life" while living a responsible, moral life. Rieder makes a compelling case for rethinking moral intuitions in the face of slow-moving catastrophes — climate change, pandemics, existential risk. The arguments are rigorous but never inaccessible, and he forces you to sit with trade-offs most of us prefer to avoid. Already shifting how I think about responsibility at scale.',
+      'I always wondered how to reconcile "living my life" while living a responsible, moral life. Rieder makes a compelling case for rethinking moral intuitions in the face of slow-moving catastrophes — climate change, pandemics, existential risk. The arguments are complex but never inaccessible, and he forces you to sit with trade-offs most of us prefer to avoid. Already shifting how I think about responsibility at scale.',
   },
   {
     title: 'What You Are Looking for Is in the Library',
     author: 'Michiko Aoyama',
+    rating: 5,
     genre: 'fiction',
     isbn: '9781529196269',
     cover: 'https://m.media-amazon.com/images/I/81gyzVTA6vL._SL500_.jpg',
+    review:
+      'A collection of short stories about different people looking for different things: career advice, friendship, a new purpose in life ... Different lives, different stories, all united by one enigmatic librarian: Sayuri Komachi. A beautiful and uplifting read.'
   },
   {
     title: 'Four Thousand Weeks',
     author: 'Oliver Burkeman',
+    rating: 5,
     genre: 'philosophy',
     isbn: '9781473545557',
+    review:
+      'Four Thousand Weeks is a much needed reality check, slap-in-the-face kind of book, reminding how insultingly brief and unimportant our lives are in the grand scheme of things. The book invites you to have a totally different relationship with time, and life itself. Amazing to reflect on, a must-read.'
   },
   {
     title: 'Learn Like a Pro',
@@ -62,8 +68,11 @@ export const books: Book[] = [
   {
     title: 'Idos de la mente',
     author: 'Luis Humberto Crosthwaite',
+    rating: 5,
     genre: 'classic',
     isbn: '9789682708251',
+    review:
+      'A fun, short, easy-to-read history of two musicians from Tijuana forming their own band. They go through highs and lows, talk about their ideal girlfriends, their love for their instruments ... A really fun and entertaining read.'
   },
   {
     title: 'Crime and Punishment',
