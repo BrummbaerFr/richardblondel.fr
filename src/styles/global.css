@@ -708,6 +708,11 @@ section:last-child { border-bottom: none; }
   font-weight: 300;
 }
 
+/* ── TAB BAR (mobile IDE tabs) ───────────────────────── */
+.tab-bar {
+  display: none;
+}
+
 /* ── MOBILE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .sidebar {
@@ -725,15 +730,18 @@ section:last-child { border-bottom: none; }
 
   .content {
     overflow: visible;
+    min-width: 0;
   }
 
   section {
     padding: 48px 24px;
+    scroll-margin-top: 71px;
   }
 
   #hero {
     min-height: 100svh;
     padding: 60px 24px;
+    scroll-margin-top: 0;
   }
 
   .skill-row {
@@ -748,5 +756,68 @@ section:last-child { border-bottom: none; }
 
   .book-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  /* Sticky chrome on mobile */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  /* IDE tab bar */
+  .tab-bar {
+    display: flex;
+    background: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: var(--header-h);
+    z-index: 90;
+    flex-shrink: 0;
+  }
+
+  .tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 14px;
+    height: 35px;
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+    color: var(--text-muted);
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    border-top: 2px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .tab:hover {
+    color: var(--text-dim);
+  }
+
+  .tab.active {
+    color: var(--text);
+    background: var(--bg);
+    border-top-color: var(--amber);
+  }
+
+  .tab-icon {
+    font-size: 10px;
+    color: var(--amber-dim);
+  }
+
+  .tab.active .tab-icon {
+    color: var(--amber);
   }
 }
