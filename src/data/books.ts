@@ -1,15 +1,22 @@
 export interface Book {
   title: string;
   author: string;
-  rating: number;
+  rating?: number;
   genre: string;
   isbn?: string;
   cover?: string;
-  review: string;
+  review?: string;
   currentlyReading?: boolean;
 }
 
 export const books: Book[] = [
+  {
+    title: 'Baltic: The Future of Europe',
+    author: 'Oliver Moody',
+    genre: 'history',
+    isbn: '9781399814300',
+    currentlyReading: true,
+  },
   {
     title: 'Catastrophe Ethics',
     author: 'Travis Rieder',
@@ -18,7 +25,6 @@ export const books: Book[] = [
     isbn: '9780593471975',
     review:
       'I always wondered how to reconcile "living my life" while living a responsible, moral life. Rieder makes a compelling case for rethinking moral intuitions in the face of slow-moving catastrophes — climate change, pandemics, existential risk. The arguments are rigorous but never inaccessible, and he forces you to sit with trade-offs most of us prefer to avoid. Already shifting how I think about responsibility at scale.',
-    currentlyReading: true,
   },
   {
     title: 'Learn Like a Pro',
@@ -50,6 +56,12 @@ export const books: Book[] = [
       'As a travel and history freak, I had to read this one. A structured tour of European history told through 29 borders — each a compressed lesson in geopolitics, identity, and the arbitrariness of where nations end. The kind of book that tells you WHY this border looks so weird, and makes you look at a map differently.',
   },
   {
+    title: 'Idos de la mente',
+    author: 'Luis Humberto Crosthwaite',
+    genre: 'classic',
+    isbn: '9789682708251',
+  },
+  {
     title: 'Crime and Punishment',
     author: 'Fyodor Dostoevsky',
     rating: 4,
@@ -66,6 +78,12 @@ export const books: Book[] = [
     isbn: '9781804613450',
     review:
       "A practical bridge between Evans' dense DDD theory and the pragmatics of writing Go. Boyle picks the patterns that translate well to Go's idioms to explain DDD sensefully. Especially useful if you already know DDD conceptually but want to see it applied in a statically-typed, opinionated language.",
+  },
+  {
+    title: 'Four Thousand Weeks',
+    author: 'Oliver Burkeman',
+    genre: 'philosophy',
+    isbn: '9781473545557',
   },
   {
     title: 'Vagabonding',
