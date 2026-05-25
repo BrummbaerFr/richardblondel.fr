@@ -755,7 +755,13 @@ section:last-child { border-bottom: none; }
   }
 
   .book-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Sticky chrome on mobile */
