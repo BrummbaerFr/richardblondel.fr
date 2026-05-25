@@ -27,6 +27,18 @@ export const books: Book[] = [
       'I always wondered how to reconcile "living my life" while living a responsible, moral life. Rieder makes a compelling case for rethinking moral intuitions in the face of slow-moving catastrophes — climate change, pandemics, existential risk. The arguments are rigorous but never inaccessible, and he forces you to sit with trade-offs most of us prefer to avoid. Already shifting how I think about responsibility at scale.',
   },
   {
+    title: 'What You Are Looking for Is in the Library',
+    author: 'Michiko Aoyama',
+    genre: 'fiction',
+    isbn: '9781529196269',
+  },
+  {
+    title: 'Four Thousand Weeks',
+    author: 'Oliver Burkeman',
+    genre: 'philosophy',
+    isbn: '9781473545557',
+  },
+  {
     title: 'Learn Like a Pro',
     author: 'Barbara Oakley & Olav Schewe',
     rating: 4,
@@ -34,16 +46,6 @@ export const books: Book[] = [
     isbn: '9781250799371',
     review:
       'Oakley and Schewe distill the science of learning into a compact, immediately usable toolkit — spaced repetition, active recall, interleaving, deliberate practice. There are many genuinely good techniques in there that you\'ll want to apply to all of your future learnings.',
-  },
-  {
-    title: 'Beyond the Wall',
-    author: 'Katja Hoyer',
-    rating: 5,
-    genre: 'history',
-    isbn: '9780241553787',
-    cover: 'https://m.media-amazon.com/images/I/8182xIP-8dL._SL500_.jpg',
-    review:
-      'Hoyer tells the story of East Germany not through the lens of the Wall or the Stasi, but through the lives of the people who actually lived there — with ambition, nostalgia, and genuine belonging. It is a corrective to the Western narrative that treats the GDR as pure dystopia and nothing else. Deeply researched and compulsively readable. As a Berlin inhabitant, often going to ex-GDR for weekend trips, this was a very enlightening read.',
   },
   {
     title: 'Borderlines',
@@ -80,16 +82,14 @@ export const books: Book[] = [
       "A practical bridge between Evans' dense DDD theory and the pragmatics of writing Go. Boyle picks the patterns that translate well to Go's idioms to explain DDD sensefully. Especially useful if you already know DDD conceptually but want to see it applied in a statically-typed, opinionated language.",
   },
   {
-    title: 'Four Thousand Weeks',
-    author: 'Oliver Burkeman',
-    genre: 'philosophy',
-    isbn: '9781473545557',
-  },
-  {
-    title: 'What You Are Looking for Is in the Library',
-    author: 'Michiko Aoyama',
-    genre: 'fiction',
-    isbn: '9781529196269',
+    title: 'Beyond the Wall',
+    author: 'Katja Hoyer',
+    rating: 5,
+    genre: 'history',
+    isbn: '9780241553787',
+    cover: 'https://m.media-amazon.com/images/I/8182xIP-8dL._SL500_.jpg',
+    review:
+      'Hoyer tells the story of East Germany not through the lens of the Wall or the Stasi, but through the lives of the people who actually lived there — with ambition, nostalgia, and genuine belonging. It is a corrective to the Western narrative that treats the GDR as pure dystopia and nothing else. Deeply researched and compulsively readable. As a Berlin inhabitant, often going to ex-GDR for weekend trips, this was a very enlightening read.',
   },
   {
     title: 'Vagabonding',
